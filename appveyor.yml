@@ -14,6 +14,6 @@ cache:
 
 build_script:
   - if not exist %USERPROFILE%\.blah mkdir %USERPROFILE%\.blah
-  - type  %USERPROFILE%\.blah\test.txt || echo no cached file
+  - if exist  %USERPROFILE%\.blah\test.txt type %USERPROFILE%\.blah\test.txt
   - time /T > %USERPROFILE%\.blah\test.txt
   - type  %USERPROFILE%\.blah\test.txt
