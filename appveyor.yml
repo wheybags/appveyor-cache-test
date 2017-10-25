@@ -9,6 +9,9 @@ os: Visual Studio 2015
 # clone directory
 clone_folder: c:\projects\blah
 
+before_build:
+  - if not exist %USERPROFILE%\.blah\test.txt echo cache not restored yet
+
 cache:
   - '%USERPROFILE%\.blah'
 
