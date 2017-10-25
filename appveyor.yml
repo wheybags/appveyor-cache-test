@@ -1,0 +1,19 @@
+branches:
+  # whitelist
+  only:
+    - master
+
+# Operating system (build VM template)
+os: Visual Studio 2015
+
+# clone directory
+clone_folder: c:\projects\blah
+
+cache:
+  - '%USERPROFILE%\.blah'
+
+build_script:
+  - if not exist %USERPROFILE%\.blah mkdir %USERPROFILE%\.blah
+  - type  %USERPROFILE%\.blah\test.txt || echo no cached file
+  - time /T > %USERPROFILE%\.blah\test.txt
+  - type  %USERPROFILE%\.blah\test.txt
